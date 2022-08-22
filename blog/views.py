@@ -16,9 +16,9 @@ def about(request):
     return render(request,'About.html')
 
 
-def blogpost(request, parasite_name_slug):
-    parasite = Blog.objects.filter(slug=parasite_name_slug).first()
-    context_dict= {'parasite': parasite}
+def blogpost(request, slug):
+    blogs = Blog.objects.filter(slug=slug).first()
+    context_dict= {'blogs': blogs}
     return render(request, 'blogpost.html', context_dict)
     
    

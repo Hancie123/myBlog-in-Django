@@ -2,24 +2,29 @@
 {% block blogactive %}active{% endblock blogactive %}
 
 {% block body  %}
+<style>
+
+  a {
+    text-decoration: none
+  }
+
+</style>
 <div class="container">
-<h1 class="my-2">Welcome to Hancie Phago Blog</h1>
+<h1 class="my-3 text-center">Welcome to Hancie Phago Blog</h1>
 
 {% for blog in blog %}
 
-<div class="media">
-    <div class="media-body">
-        
-      <h5><a href="/blogpost/{{blog.slug}}" class="text-dark">{{blog.title}}</a></h5>
-        
-      <div>
-        {{blog.content| slice:500}}...
-      </div>
-     
+<div class="container">
+  <div class="card">
+    <h5 class="card-header"><a href="/blogpost/{{blog.slug}}">{{blog.title}}</a></h5>
+    <div class="card-body">
+      <p class="card-text">{{blog.content| slice:500}}</p>
+      <a href="/blogpost/{{blog.slug}}" class="btn btn-primary">Read More...</a>
     </div>
-    <button class="btn btn-primary">Read More...</button>
   </div>
-  <br>
+
+</div>
+<br>
 {% endfor %}
 </div>
 {% endblock body %}

@@ -24,14 +24,21 @@
   </button>
 </div>
 <br>
+<style>
+
+a {
+  text-decoration:none
+}
+
+</style>
 <h1 class="text-center">My Blog</h1>
 {% for data in blogdata %}
 <div class="container">
   <div class="card">
-    <h5 class="card-header">{{data.title}}</h5>
+    <h5 class="card-header"><a href="/blogpost/{{data.slug}}">{{data.title}}</a></h5>
     <div class="card-body">
       <p class="card-text">{{data.content| slice:500}}</p>
-      <a href="#" class="btn btn-primary">Read More...</a>
+      <a href="/blogpost/{{data.slug}}" class="btn btn-primary">Read More...</a>
     </div>
   </div>
 

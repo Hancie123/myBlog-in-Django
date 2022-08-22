@@ -3,6 +3,117 @@
 
 {% block body  %}
 
-<h1>This is my contact page</h1>
+<section class="getintouch">
+    <div class="container modern-form">
+        <div class="text-center">
+            <h4 style="color: #212529;font-size: 45px;">Get in touch</h4>
+        </div>
+        <hr class="modern-form__hr">
+        <div class="modern-form__form-container">
+            <form>
+                <div class="row">
+                    <div class="col col-contact">
+                        <div class="modern-form__form-group--padding-r form-group mb-3"><input class="form-control input input-tr" type="text" placeholder="First Name">
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-contact">
+                        <div class="modern-form__form-group--padding-l form-group mb-3"><input class="form-control input input-tr" type="text" placeholder="Email">
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="modern-form__form-group--padding-t form-group mb-3"><textarea class="form-control input modern-form__form-control--textarea" placeholder="Message"></textarea>
+                            <div class="line-box">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center"><button class="btn btn-primary submit-now" type="submit">Submit Now</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    .submit-now {
+        margin-top: 20px;
+        font-size: 16px;
+        width: 200px;
+        height: 50px;
+        background-color: #e74c3c;
+        border-color: transparent;
+      }
+      
+      .form-control.input {
+        border: 0;
+        background: transparent;
+        border-bottom: 1px solid silver;
+        border-radius: 0px !important;
+      }
+      
+      .getintouch {
+        height: auto;
+        background-image: url("/Get%20In%20touch/GetInTouch.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      
+      input[type="text"], input[type="email"], input[type="tel"], textarea {
+        border-radius: 0 !important;
+      }
+      
+      input[type="text"], input[type="email"], input[type="tel"], textarea {
+        border-radius: 8px !important;
+      }
+      
+      .btn-primary:hover {
+        color: #fff;
+        background-color: #4daade;
+        border-color: #4daade;
+        box-shadow: 0px 10px 15px rgba(157,157,157,0.4);
+      }
+      
+      .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #4daade;
+        border-color: #4daade;
+      }
+      
+      .modern-form {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+      
+     
+      
+      .modern-form__form-container {
+        padding-top: 100px;
+      }
+      
+      .modern-form__form-group--padding-r {
+        padding-right: 20px;
+      }
+      
+      .modern-form__form-group--padding-t {
+        padding-top: 50px;
+      }
+      
+      .modern-form__form-control--textarea {
+        height: 95px !important;
+        resize: none;
+      }
+      
+
+</style>
 
 {% endblock body %}

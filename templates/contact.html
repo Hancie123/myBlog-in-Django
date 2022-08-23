@@ -3,6 +3,15 @@
 
 {% block body  %}
 
+{% if success %}
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Hello!</strong> The message is submitted successfully!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+
+
 <section class="getintouch">
     <div class="container modern-form">
         <div class="text-center">
@@ -10,17 +19,18 @@
         </div>
         <hr class="modern-form__hr">
         <div class="modern-form__form-container">
-            <form>
+            <form method="post">
+              {% csrf_token %}
                 <div class="row">
                     <div class="col col-contact">
-                        <div class="modern-form__form-group--padding-r form-group mb-3"><input class="form-control input input-tr" type="text" placeholder="First Name">
+                        <div class="modern-form__form-group--padding-r form-group mb-3"><input class="form-control input input-tr" name="name" type="text" placeholder="Enter Name">
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col col-contact">
-                        <div class="modern-form__form-group--padding-l form-group mb-3"><input class="form-control input input-tr" type="text" placeholder="Email">
+                        <div class="modern-form__form-group--padding-l form-group mb-3"><input class="form-control input input-tr" name="email" type="text" placeholder="Email">
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
@@ -29,7 +39,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="modern-form__form-group--padding-t form-group mb-3"><textarea class="form-control input modern-form__form-control--textarea" placeholder="Message"></textarea>
+                        <div class="modern-form__form-group--padding-t form-group mb-3"><textarea class="form-control input modern-form__form-control--textarea" name="message" placeholder="Message"></textarea>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>

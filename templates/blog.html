@@ -5,7 +5,8 @@
 <style>
 
   a {
-    text-decoration: none
+    text-decoration: none;
+    color:white;
   }
 
 </style>
@@ -16,15 +17,34 @@
 
 <div class="container">
   <div class="card">
-    <h5 class="card-header"><a href="/blogpost/{{blog.slug}}">{{blog.title}}</a></h5>
+    <h5 class="card-header bg-dark text-light"><a href="/blogpost/{{blog.slug}}">{{blog.title}}</a></h5>
     <div class="card-body">
-      <p class="card-text">{{blog.content| slice:500}}</p>
-      <a href="/blogpost/{{blog.slug}}" class="btn btn-primary">Read More...</a>
+      <p class="card-text">{{blog.content| slice:500}}...</p>
+      <a href="/blogpost/{{blog.slug}}" class="btn btn-outline-primary">Read More...</a>
     </div>
   </div>
 
 </div>
 <br>
 {% endfor %}
+<div class="my-3 float-right">
+  {% if prev %}
+  <button type="button" class="btn btn-primary"><a href="/blog?page={{prev}}">Previous &laquo;</a></button>
+
+  {% else %}
+  <button type="button" class="btn btn-primary"><a href="#">&laquo; Previous</a></button>
+  {% endif %}
+
+
+  {% if nxt %}
+  <button type="button" class="btn btn-primary"><a href="/blog?page={{nxt}}">Next &raquo;</a></button>
+
+  {% else %}
+  <button type="button" class="btn btn-primary"><a href="#">&laquo; Next</a></button>
+  {% endif %}
+  
+
+</div>
+
 </div>
 {% endblock body %}

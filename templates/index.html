@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% block homeactive %}active{% endblock homeactive %}
 
+
 {% block body  %}
+{% load static %}
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
-      <img src="https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp" style="width: 100%; height: 70vh;" class="d-block" alt="...">
+      <img src="{% static 'img/slider2.jpg'%}" style="width: 100%; height: 70vh;" class="d-block" alt="...">
     </div>
     <div class="carousel-item" data-bs-interval="2000">
-      <img src="https://wallpaperbat.com/img/169973-free-download-switzerland-wallpaper-04-hd-wallpaper-wallpaper-pics.jpg" style="width: 100%; height: 70vh;" class="d-block" alt="...">
+      <img src="{% static 'img/slider1.webp'%}" style="width: 100%; height: 70vh;" class="d-block" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://wallpaperaccess.com/full/94441.jpg" style="width: 100%; height: 70vh;" class="d-block" alt="...">
+      <img src="{% static 'img/slider3.jpg'%}" style="width: 100%; height: 70vh;" class="d-block" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -27,18 +29,22 @@
 <style>
 
 a {
-  text-decoration:none
+  text-decoration:none;
+  color:white;
 }
 
 </style>
+
+
+
 <h1 class="text-center">My Blog</h1>
 {% for data in blogdata %}
 <div class="container">
   <div class="card">
-    <h5 class="card-header"><a href="/blogpost/{{data.slug}}">{{data.title}}</a></h5>
+    <h5 class="card-header bg-dark"><a href="blogpost/{{data.slug}}">{{data.title}}</a></h5>
     <div class="card-body">
-      <p class="card-text">{{data.content| slice:500}}</p>
-      <a href="/blogpost/{{data.slug}}" class="btn btn-primary">Read More...</a>
+      <p class="card-text">{{data.content| slice:500}}....</p>
+      <a href="blogpost/{{data.slug}}" class="btn btn-primary">Read More...</a>
     </div>
   </div>
 
